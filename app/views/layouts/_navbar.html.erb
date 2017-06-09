@@ -1,0 +1,29 @@
+<header>
+    <div class="row">
+        <nav class="col s12 m12 l12">
+          <div class="nav-wrapper col s12 m12 l12">
+              <div class="logo col s12 m12 l12">
+                  <%= image_tag("3 - sandra_lopes_logomarca_fundo_preto.jpg", :alt => "logo", class: "brand-logo") %>
+              </div>
+            <!--<%= link_to image_tag('3 - sandra_lopes_logomarca_fundo_preto.jpg'), "#", id: "logo" %>-->
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <% if user_signed_in? %>
+                    <li><a href="#">Clientes</a></li>
+                    <li><a href="#">Projetos e Construções</a></li>
+                    <li><a href="#">Despesas</a></li>
+                    <li><%= link_to('Sair', destroy_user_session_path, method: :delete) %></li>
+                <% else %>
+                    <li><%= link_to('Entrar', new_user_session_path)  %></li>
+                <% end %>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+              <li><a href="sass.html">Sass</a></li>
+              <li><a href="badges.html">Components</a></li>
+              <li><a href="collapsible.html">Javascript</a></li>
+              <li><a href="mobile.html">Mobile</a></li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+</header>
