@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Clientes</h1>
+
+<%#= link_to 'New Cliente', new_cliente_path %>
+<%= link_to '<i class="material-icons">add</i> Do it@'.html_safe, new_cliente_path, :class => "btn-floating btn-large waves-effect waves-light green" %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Proprietario</th>
+      <!--<th>Cpf</th>
+      <th>Telefone</th>
+      <th>Endereco residencia</th>
+      <th>Endereco obra</th>
+      <th>Email</th>-->
+      <th>Valor projeto</th>
+      <th>Art</th>
+
+      <th colspan="2">Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clientes.each do |cliente| %>
+      <tr>
+        <td><%= link_to cliente.proprietario, cliente %></td>
+        <!--<td><%= cliente.cpf %></td>
+        <td><%= cliente.telefone %></td>
+        <td><%= cliente.endereco_residencia %></td>
+        <td><%= cliente.endereco_obra %></td>
+        <td><%= cliente.email %></td>-->
+        <td><%= cliente.valor_projeto %></td>
+        <td><%= cliente.art %></td>
+
+        <td>
+          <%= link_to '<i class="material-icons">mode_edit</i>'.html_safe, edit_cliente_path(cliente), class: 'waves-effect waves-light btn yellow darken-1 btn-small col s6 m6 l6' %>
+          <%= link_to '<i class="material-icons">delete</i>'.html_safe, cliente, method: :delete, data: { confirm: 'Você tem certeza?' }, class: 'waves-effect waves-light btn red btn-small' %>
+          <%#= link_to 'Destroy', cliente, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>

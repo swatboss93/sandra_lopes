@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Proprietario:</strong>
+  <%= @cliente.proprietario %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @cliente.cpf %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @cliente.telefone %>
+</p>
+
+<p>
+  <strong>Endereco residencia:</strong>
+  <%= @cliente.endereco_residencia %>
+</p>
+
+<p>
+  <strong>Endereco obra:</strong>
+  <%= @cliente.endereco_obra %>
+</p>
+
+<p>
+  <strong>Valor projeto:</strong>
+  <%= @cliente.valor_projeto %>
+</p>
+
+<p>
+  <strong>Art:</strong>
+  <%= @cliente.art %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @cliente.email %>
+</p>
+
+<%#= link_to 'Edit', edit_cliente_path(@cliente) %>
+<%#= link_to 'Back', clientes_path %>
+<%= link_to '<i class="material-icons">mode_edit</i>'.html_safe, edit_cliente_path(@cliente), class: 'waves-effect waves-light btn yellow darken-1 btn-small col s6 m6 l6' %>
+<%= link_to '<i class="material-icons">delete</i>'.html_safe, @cliente, method: :delete, data: { confirm: 'Você tem certeza?' }, class: 'waves-effect waves-light btn red btn-small' %>

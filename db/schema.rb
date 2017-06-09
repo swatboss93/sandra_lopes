@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170608230855) do
+ActiveRecord::Schema.define(version: 20170609134629) do
+
+  create_table "clientes", force: :cascade do |t|
+    t.string   "proprietario"
+    t.string   "cpf"
+    t.string   "telefone"
+    t.string   "endereco_residencia"
+    t.string   "endereco_obra"
+    t.decimal  "valor_projeto",       precision: 10, scale: 2
+    t.string   "art"
+    t.string   "email"
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
