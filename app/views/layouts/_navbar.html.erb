@@ -18,10 +18,14 @@
                 <% end %>
             </ul>
             <ul class="side-nav" id="mobile-demo">
-              <li><a href="sass.html">Sass</a></li>
-              <li><a href="badges.html">Components</a></li>
-              <li><a href="collapsible.html">Javascript</a></li>
-              <li><a href="mobile.html">Mobile</a></li>
+                <% if user_signed_in? %>
+                    <li><a href="#">Clientes</a></li>
+                    <li><a href="#">Projetos e Construções</a></li>
+                    <li><a href="#">Despesas</a></li>
+                    <li><%= link_to('Sair', destroy_user_session_path, method: :delete) %></li>
+                <% else %>
+                    <li><%= link_to('Entrar', new_user_session_path)  %></li>
+                <% end %>
             </ul>
           </div>
         </nav>
